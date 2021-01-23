@@ -1,9 +1,9 @@
 package com.napier.sem;
-
+//Source: https://github.com/afitzgibbon/Java---Console-Menu-Framework
 
 
 import java.io.Console;
-//Source: https://github.com/afitzgibbon/Java---Console-Menu-Framework
+
 
 /*
  * ConsoleUtils exposes a few useful methods which can be used across a broad range of console apps.
