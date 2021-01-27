@@ -4,7 +4,7 @@ public class App
 {
     public static void main(String[] args) {
 
-        new MenuChoice().mainMenu();
+        System.out.println("Hello");
 
 
     }
