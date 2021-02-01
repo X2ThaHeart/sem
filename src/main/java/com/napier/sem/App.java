@@ -11,8 +11,10 @@ public class App
 
         // Connect to database
         a.connect();
-
-        a.getEmployee(1);
+        // Get Employee
+        Employee emp = a.getEmployee(255530);
+        // Display results
+        a.displayEmployee(emp);
 
         // Disconnect from database
         a.disconnect();
@@ -118,6 +120,19 @@ public class App
         }
     }
 
-
+    public void displayEmployee(Employee emp)
+    {
+        if (emp != null)
+        {
+            System.out.println(
+                    emp.emp_no + " "
+                            + emp.first_name + " "
+                            + emp.last_name + "\n"
+                            + emp.title + "\n"
+                            + "Salary:" + emp.salary + "\n"
+                            + emp.dept_name + "\n"
+                            + "Manager: " + emp.manager + "\n");
+        }
+    }
 
 }
