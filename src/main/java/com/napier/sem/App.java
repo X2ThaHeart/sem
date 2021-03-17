@@ -10,8 +10,8 @@ public class App {
         // Create new Application
         App a = new App();
         // Connect to database
-        a.connect();
-        System.out.println("Updated from latest uc4");
+        a.connect("localhost:33060");
+        System.out.println("After database connection details changed");
         // Get Employee
   //      Employee emp = a.getEmployee(255530);
         // Display results
@@ -45,7 +45,7 @@ public class App {
     /**
      * Connect to the MySQL database.
      */
-    public void connect() {
+    public void connect(String location) {
         try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -61,7 +61,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + location + "/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
