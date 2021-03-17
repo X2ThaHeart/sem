@@ -10,7 +10,15 @@ public class App {
         // Create new Application
         App a = new App();
         // Connect to database
-        a.connect("localhost:33060");
+        if (args.length < 1)
+        {
+            a.connect("localhost:3306");
+        }
+        else
+        {
+            a.connect(args[0]);
+        }
+
         System.out.println("After database connection details changed");
         // Get Employee
   //      Employee emp = a.getEmployee(255530);
